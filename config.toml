@@ -1,0 +1,35 @@
+baseURL = "https://example.com/"
+languageCode = "ja-jp"
+title = "orLab Knowledge"
+theme = "ananke"
+publishDir = "docs"
+
+[params]
+  description = "orLab Knowledge - A structured blog for AI, Unity, Shader, and more"
+  featured_image = "/images/sample.jpg"
+  
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "AI"
+    url = "/ai/"
+    weight = 2
+  [[menu.main]]
+    name = "Unity"
+    url = "/unity/"
+    weight = 3
+  [[menu.main]]
+    name = "Shader"
+    url = "/shader/"
+    weight = 4
+  [[menu.main]]
+    name = "Notes"
+    url = "/notes/"
+    weight = 5
+  [[menu.main]]
+    name = "Docs"
+    url = "/docs/"
+    weight = 6
