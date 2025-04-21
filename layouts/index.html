@@ -10,9 +10,9 @@
       
       <!-- If no categories are defined, use sections instead -->
       {{ if not .Site.Taxonomies.categories }}
-        {{ range $name, $_ := .Site.Sections }}
-          {{ if ne $name "" }}
-            <a href="{{ $name | urlize | relLangURL }}">{{ $name | humanize }}</a>
+        {{ range .Site.Sections }}
+          {{ if ne .Section "" }}
+            <a href="{{ .Section | urlize | relLangURL }}">{{ .Section | humanize }}</a>
           {{ end }}
         {{ end }}
       {{ end }}

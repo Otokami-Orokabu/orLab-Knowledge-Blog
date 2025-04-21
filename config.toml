@@ -15,6 +15,7 @@ publishDir = "docs"
   # Show recent posts on home page
   ananke.show_recent_posts = true
   recent_posts_number = 5
+  mainSections = ["post", "notes", "ai", "unity", "shader"]
   
 [menu]
   [[menu.main]]
