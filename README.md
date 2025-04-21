@@ -2,6 +2,8 @@
 
 GitHub Pages用のHugoで構築された構造化ブログ「orLab Knowledge」です。
 
+**公開サイト**: https://otokami-orokabu.github.io/orLab-Knowledge-Blog/
+
 ## 使用方法
 
 ### 前提条件
@@ -11,8 +13,8 @@ GitHub Pages用のHugoで構築された構造化ブログ「orLab Knowledge」�
 
 1. リポジトリをクローン
 ```bash
-git clone https://github.com/yourusername/orDiary.git
-cd orDiary
+git clone https://github.com/Otokami-Orokabu/orLab-Knowledge-Blog.git
+cd orLab-Knowledge-Blog
 ```
 
 2. テーマをサブモジュールとして初期化（初回のみ）
@@ -65,7 +67,7 @@ hugo
 ## ディレクトリ構造
 
 ```
-orDiary/
+orLab-Knowledge-Blog/
 ├── .github/
 │   └── workflows/
 │       └── hugo.yml
