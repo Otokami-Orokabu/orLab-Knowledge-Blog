@@ -94,7 +94,7 @@ hugo
 ```bash
 git add .
 git commit -m "新しい記事を追加"
-git push origin new-main:main
+git push origin main:main
 ```
 
 または、自動化スクリプトを使用する場合：
@@ -150,28 +150,28 @@ chmod +x publish.sh
 ```
 
 スクリプトは以下の処理を自動的に行います：
-1. 現在のブランチが `new-main` であることを確認（異なる場合は切り替えを提案）
+1. 現在のブランチが `main` であることを確認（異なる場合は切り替えを提案）
 2. Hugoでサイトをビルド
 3. 変更をGitに追加
 4. 指定されたメッセージでコミット
-5. GitHubにプッシュ（`origin new-main:main`）
+5. GitHubにプッシュ（`origin main:main`）
 
 ## Git ワークフロー
 
 このリポジトリでは以下のブランチ構造を使用しています：
 
-- **new-main**: ローカル開発用のブランチ。すべての変更はこのブランチで行います。
+- **main**: ローカル開発用のブランチ。すべての変更はこのブランチで行います。
 - **origin/main**: GitHub上のメインブランチ。GitHub Pagesの公開に使用されます。
 
 ### 開発の流れ
 
-1. 常に `new-main` ブランチで作業を行います
+1. 常に `main` ブランチで作業を行います
 ```bash
 # 現在のブランチを確認
 git branch
 
-# もし別のブランチにいる場合は new-main に切り替え
-git checkout new-main
+# もし別のブランチにいる場合は main に切り替え
+git checkout main
 ```
 
 2. 変更を加えた後、コミットします
@@ -182,9 +182,9 @@ git commit -m "変更内容の説明"
 
 3. 変更をGitHubにプッシュします
 ```bash
-git push origin new-main:main
+git push origin main:main
 ```
-このコマンドは、ローカルの `new-main` ブランチの内容をリモートの `main` ブランチにプッシュします。
+このコマンドは、ローカルの `main` ブランチの内容をリモートの `main` ブランチにプッシュします。
 
 ## ディレクトリ構造
 

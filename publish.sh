@@ -16,11 +16,11 @@ show_help() {
   echo ""
   echo "説明:"
   echo "  このスクリプトは以下の処理を自動的に行います："
-  echo "  1. 現在のブランチが new-main であることを確認（異なる場合は切り替えを提案）"
+  echo "  1. 現在のブランチが main であることを確認（異なる場合は切り替えを提案）"
   echo "  2. Hugoでサイトをビルド"
   echo "  3. 変更をGitに追加"
   echo "  4. 指定されたメッセージでコミット"
-  echo "  5. GitHubにプッシュ（origin new-main:main）"
+  echo "  5. GitHubにプッシュ（origin main:main）"
   exit 0
 }
 
@@ -38,17 +38,17 @@ fi
 
 # 現在のブランチを確認
 CURRENT_BRANCH=$(git branch --show-current)
-if [ "$CURRENT_BRANCH" != "new-main" ]; then
-  echo "警告: 現在 '$CURRENT_BRANCH' ブランチにいます。new-mainブランチに切り替えますか？ (y/n)"
+if [ "$CURRENT_BRANCH" != "main" ]; then
+  echo "警告: 現在 '$CURRENT_BRANCH' ブランチにいます。mainブランチに切り替えますか？ (y/n)"
   read -r answer
   if [ "$answer" = "y" ] || [ "$answer" = "Y" ]; then
-    git checkout new-main
+    git checkout main
     if [ $? -ne 0 ]; then
-      echo "エラー: new-mainブランチへの切り替えに失敗しました。"
+      echo "エラー: mainブランチへの切り替えに失敗しました。"
       exit 1
     fi
   else
-    echo "操作をキャンセルしました。new-mainブランチで作業することをお勧めします。"
+    echo "操作をキャンセルしました。mainブランチで作業することをお勧めします。"
     exit 1
   fi
 fi
@@ -81,7 +81,7 @@ fi
 
 # リモートにプッシュ
 echo "GitHubにプッシュ中..."
-git push origin new-main:main
+git push origin main:main
 if [ $? -ne 0 ]; then
   echo "エラー: プッシュに失敗しました。"
   exit 1
