@@ -1,0 +1,76 @@
+{{ define "main" }}
+  <article class="pa3 pa4-ns nested-copy-line-height">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links {{ $.Param "text_color" | compare.Default "mid-gray" }}">
+      {{- .Content -}}
+    </section>
+    
+    <!-- Tag Filter -->
+    {{ if .Data.Terms }}
+      <!-- This is a taxonomy page (categories or tags) -->
+    {{ else }}
+      <!-- This is a section page -->
+      {{ $tags := slice }}
+      {{ range .Pages }}
+        {{ range .Params.tags }}
+          {{ $tags = $tags | append . }}
+        {{ end }}
+      {{ end }}
+      {{ $tags = uniq $tags }}
+      
+      {{ if gt (len $tags) 0 }}
+      <div class="tag-filter">
+        <span class="tag-item active" data-tag="all">すべて</span>
+        {{ range $tags }}
+          <span class="tag-item" data-tag="{{ . | urlize }}">{{ . }}</span>
+        {{ end }}
+      </div>
+      {{ end }}
+    {{ end }}
+    
+    <section class="flex-ns mt5 flex-wrap justify-around">
+      {{ range .Paginator.Pages }}
+        <div class="w-100 w-30-l mb4 relative bg-white post-item" 
+             {{ with .Params.tags }}data-tags="{{ delimit . " " }}"{{ end }}>
+          {{ .Render "summary" }}
+        </div>
+      {{ end }}
+    </section>
+    {{- template "_internal/pagination.html" . -}}
+  </article>
+
+  <!-- JavaScript for tag filtering -->
+  {{ if not .Data.Terms }}
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tagItems = document.querySelectorAll('.tag-item');
+      const postItems = document.querySelectorAll('.post-item');
+      
+      tagItems.forEach(item => {
+        item.addEventListener('click', function() {
+          // Remove active class from all tag items
+          tagItems.forEach(tag => tag.classList.remove('active'));
+          
+          // Add active class to clicked tag
+          this.classList.add('active');
+          
+          const selectedTag = this.getAttribute('data-tag');
+          
+          // Show/hide posts based on selected tag
+          postItems.forEach(post => {
+            if (selectedTag === 'all') {
+              post.style.display = 'block';
+            } else {
+              const postTags = post.getAttribute('data-tags');
+              if (postTags && postTags.includes(selectedTag)) {
+                post.style.display = 'block';
+              } else {
+                post.style.display = 'none';
+              }
+            }
+          });
+        });
+      });
+    });
+  </script>
+  {{ end }}
+{{ end }}

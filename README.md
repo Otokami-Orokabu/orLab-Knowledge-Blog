@@ -1,15 +1,17 @@
-# orLab Knowledge
+# orLab Knowledge Blog
 
-GitHub Pages用のHugoで構築された構造化ブログ「orLab Knowledge」です。
+orLab Knowledge Blogは、AI、Unity、Shader、その他の技術情報を整理して共有するためのHugoベースのブログサイトです。
 
-**公開サイト**: https://otokami-orokabu.github.io/orLab-Knowledge-Blog/
+## 特徴
+
+- **カテゴリ別整理**: AI、Unity、Shader、Notes、Docsなどのカテゴリで情報を整理
+- **タグフィルタリング**: カテゴリページ内でタグによる記事の絞り込みが可能
+- **レスポンシブデザイン**: モバイルからデスクトップまで様々なデバイスに対応
+- **読みやすさ重視**: 行間、フォントサイズ、コントラストを調整し読みやすさを向上
 
 ## 使用方法
 
-### 前提条件
-- [Hugo](https://gohugo.io/getting-started/installing/)がインストールされていること
-
-### ローカルでの開発
+### ローカル環境での実行
 
 1. リポジトリをクローン
 ```bash
@@ -17,10 +19,16 @@ git clone https://github.com/Otokami-Orokabu/orLab-Knowledge-Blog.git
 cd orLab-Knowledge-Blog
 ```
 
-2. テーマをサブモジュールとして初期化（初回のみ）
+2. Hugoをインストール（まだの場合）
 ```bash
-git submodule init
-git submodule update
+# macOSの場合
+brew install hugo
+
+# Windowsの場合
+choco install hugo -confirm
+
+# その他の環境は公式サイトを参照
+# https://gohugo.io/getting-started/installing/
 ```
 
 3. ローカルサーバーを起動
@@ -28,65 +36,48 @@ git submodule update
 hugo server -D
 ```
 
-4. ブラウザで http://localhost:1313 にアクセス
+4. ブラウザで http://localhost:1313/orLab-Knowledge-Blog/ にアクセス
 
-### 新しい記事の作成
+### 新しい記事の追加
 
+1. 新しい記事を作成
 ```bash
 # AIカテゴリに新しい記事を作成
 hugo new ai/my-new-post.md
 
 # Unityカテゴリに新しい記事を作成
 hugo new unity/my-new-post.md
-
-# Shaderカテゴリに新しい記事を作成
-hugo new shader/my-new-post.md
-
-# Notesカテゴリに新しい記事を作成
-hugo new notes/my-new-post.md
-
-# Docsカテゴリに新しい記事を作成
-hugo new docs/my-new-post.md
 ```
 
-### ビルド手順
+2. 作成されたMarkdownファイルを編集
+```markdown
+---
+title: "記事タイトル"
+date: 2025-04-21T00:00:00+09:00
+draft: false
+tags: ["タグ1", "タグ2"]
+categories: ["カテゴリ名"]
+---
 
+ここに記事の内容を書きます。
+```
+
+3. サイトをビルド
 ```bash
-# docs/ディレクトリにサイトをビルド
 hugo
 ```
 
-ビルドされたサイトは `docs/` ディレクトリに出力されます。このディレクトリの内容がGitHub Pagesで公開されます。
-
-## GitHub Pagesでの公開
-
-1. GitHubリポジトリの設定ページで、GitHub Pagesのソースを `main` ブランチの `/docs` フォルダに設定します。
-
-2. 変更をコミットしてプッシュすると、GitHub Actionsによって自動的にサイトがビルドされ、GitHub Pagesにデプロイされます。
-
-## ディレクトリ構造
-
+4. 変更をコミットしてプッシュ
+```bash
+git add .
+git commit -m "新しい記事を追加"
+git push
 ```
-orLab-Knowledge-Blog/
-├── .github/
-│   └── workflows/
-│       └── hugo.yml
-├── archetypes/
-│   └── default.md
-├── content/
-│   ├── ai/
-│   │   └── sample.md
-│   ├── unity/
-│   ├── notes/
-│   ├── docs/
-│   └── shader/
-├── docs/          # GitHub Pages 用ビルド出力
-├── static/
-│   └── images/
-│       └── sample.jpg
-├── themes/
-│   └── ananke/    # サブモジュールとして追加
-├── .gitignore
-├── .gitmodules
-├── config.toml
-└── README.md
+
+## カスタマイズ
+
+サイトのカスタマイズ内容は [CHANGES.md](docs/CHANGES.md) に記録されています。
+
+## ライセンス
+
+このプロジェクトは [MIT License](LICENSE) の下で公開されています。

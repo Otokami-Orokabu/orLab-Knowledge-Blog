@@ -1,0 +1,72 @@
+/* Custom CSS for orLab Knowledge Blog */
+
+/* Increase line height for better readability */
+.nested-copy-line-height p, 
+.nested-copy-line-height li {
+  line-height: 1.8;
+}
+
+/* Adjust font size for body text */
+.f4 {
+  font-size: 16px;
+}
+
+/* Increase contrast for links */
+.link {
+  color: #0056b3;
+  transition: color 0.15s ease-in;
+}
+
+.link:hover, 
+.link:focus {
+  color: #003d7a;
+}
+
+/* Style for category navigation on homepage */
+.category-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem 0;
+  gap: 1rem;
+}
+
+.category-nav a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #f4f4f4;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.category-nav a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Tag filter styles */
+.tag-filter {
+  margin: 1rem 0 2rem;
+  text-align: center;
+}
+
+.tag-filter .tag-item {
+  display: inline-block;
+  margin: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  background-color: #f4f4f4;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tag-filter .tag-item:hover,
+.tag-filter .tag-item.active {
+  background-color: #333;
+  color: #fff;
+}

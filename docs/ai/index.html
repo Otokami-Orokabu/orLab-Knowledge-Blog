@@ -17,7 +17,6 @@
 
     
 <link rel="stylesheet" href="/orLab-Knowledge-Blog/ananke/css/main.min.2438bcafd7af9675c426d1a4afcd16cfff18e4e10f401071e45b5ccd3be40a0d.css" >
-<link rel="stylesheet" href="/orLab-Knowledge-Blog/css/main.min.css" >
 
 
 
@@ -61,6 +60,8 @@
 
     
 	
+<link rel="stylesheet" href="/orLab-Knowledge-Blog/css/custom.css">
+
   </head><body class="ma0 avenir bg-near-white production">
 
     
@@ -138,9 +139,40 @@
       
   <article class="pa3 pa4-ns nested-copy-line-height">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links mid-gray"></section>
+    
+    
+    
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+      
+      
+      <div class="tag-filter">
+        <span class="tag-item active" data-tag="all">すべて</span>
+        
+          <span class="tag-item" data-tag="ai">ai</span>
+        
+          <span class="tag-item" data-tag="prompt">prompt</span>
+        
+          <span class="tag-item" data-tag="structure">structure</span>
+        
+      </div>
+      
+    
+    
     <section class="flex-ns mt5 flex-wrap justify-around">
       
-        <div class="w-100 w-30-l mb4 relative bg-white">
+        <div class="w-100 w-30-l mb4 relative bg-white post-item" 
+             data-tags="ai prompt structure">
           <div class="w-100 mb4 nested-copy-line-height relative bg-white">
   <div class="mb3 pa4 gray overflow-hidden bg-white">
     <span class="f6 db">Ais</span>
@@ -160,6 +192,42 @@ Drive画像を埋め込む場合は以下の形式を使用します：
         </div>
       
     </section></article>
+
+  
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tagItems = document.querySelectorAll('.tag-item');
+      const postItems = document.querySelectorAll('.post-item');
+      
+      tagItems.forEach(item => {
+        item.addEventListener('click', function() {
+          
+          tagItems.forEach(tag => tag.classList.remove('active'));
+          
+          
+          this.classList.add('active');
+          
+          const selectedTag = this.getAttribute('data-tag');
+          
+          
+          postItems.forEach(post => {
+            if (selectedTag === 'all') {
+              post.style.display = 'block';
+            } else {
+              const postTags = post.getAttribute('data-tags');
+              if (postTags && postTags.includes(selectedTag)) {
+                post.style.display = 'block';
+              } else {
+                post.style.display = 'none';
+              }
+            }
+          });
+        });
+      });
+    });
+  </script>
+  
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

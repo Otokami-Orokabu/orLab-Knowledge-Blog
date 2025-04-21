@@ -4,9 +4,17 @@ title = "orLab Knowledge"
 theme = "ananke"
 publishDir = "docs"
 
+# Enable tags and categories
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
 [params]
   description = "orLab Knowledge - A structured blog for AI, Unity, Shader, and more"
   featured_image = "/images/sample.jpg"
+  # Show recent posts on home page
+  ananke.show_recent_posts = true
+  recent_posts_number = 5
   
 [menu]
   [[menu.main]]
