@@ -13,7 +13,7 @@
       <link>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/ai/sample/</link>
       <pubDate>Sun, 20 Apr 2025 00:00:00 +0000</pubDate>
       <guid>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/ai/sample/</guid>
-      <description>これはAIプロンプト構造のメモです。&#xA;Drive画像を埋め込む場合は以下の形式を使用します：</description>
+      <description>&lt;p&gt;これはAIプロンプト構造のメモです。&lt;br&gt;&#xA;Drive画像を埋め込む場合は以下の形式を使用します：&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://drive.google.com/uc?export=view&amp;amp;id=xxxxxxxxxxxxxxxxxx&#34; alt=&#34;構造図&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
