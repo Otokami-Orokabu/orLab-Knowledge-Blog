@@ -16,6 +16,7 @@ orLab Knowledge Blogは、AI、Unity、Shader、その他の技術情報を整�
 ### 前提条件
 
 - [Hugo](https://gohugo.io/getting-started/installing/)がインストールされていること
+  - zshでHugoにパスを通す方法は[こちら](hugo-zsh-setup.md)を参照
 
 ### ローカル環境での実行
 
