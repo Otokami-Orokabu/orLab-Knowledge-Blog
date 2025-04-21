@@ -1,8 +1,36 @@
 # 記事作成後のGit操作を自動化するPowerShellスクリプト
 
 param(
-    [string]$CommitMessage = "記事を追加・更新"
+    [string]$CommitMessage = "記事を追加・更新",
+    [switch]$Help
 )
+
+# ヘルプメッセージを表示
+function Show-Help {
+    Write-Host "使用方法: .\publish.ps1 [-CommitMessage <メッセージ>] [-Help]" -ForegroundColor Cyan
+    Write-Host ""
+    Write-Host "パラメータ:" -ForegroundColor Cyan
+    Write-Host "  -CommitMessage <メッセージ>  コミットメッセージを指定（デフォルト: '記事を追加・更新'）"
+    Write-Host "  -Help                      このヘルプメッセージを表示"
+    Write-Host ""
+    Write-Host "例:" -ForegroundColor Cyan
+    Write-Host "  .\publish.ps1                                # デフォルトのコミットメッセージを使用"
+    Write-Host "  .\publish.ps1 -CommitMessage 'AIカテゴリに記事を追加'  # カスタムコミットメッセージを指定"
+    Write-Host ""
+    Write-Host "説明:" -ForegroundColor Cyan
+    Write-Host "  このスクリプトは以下の処理を自動的に行います：" -ForegroundColor White
+    Write-Host "  1. 現在のブランチが new-main であることを確認（異なる場合は切り替えを提案）"
+    Write-Host "  2. Hugoでサイトをビルド"
+    Write-Host "  3. 変更をGitに追加"
+    Write-Host "  4. 指定されたメッセージでコミット"
+    Write-Host "  5. GitHubにプッシュ（origin-new new-main:main）"
+    exit 0
+}
+
+# ヘルプオプションの確認
+if ($Help) {
+    Show-Help
+}
 
 # 現在のブランチを確認
 $CurrentBranch = git branch --show-current

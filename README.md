@@ -126,6 +126,9 @@ git push origin-new new-main:main
 # 実行権限を付与（初回のみ）
 chmod +x publish.sh
 
+# ヘルプを表示
+./publish.sh --help
+
 # デフォルトのコミットメッセージで実行
 ./publish.sh
 
@@ -136,6 +139,9 @@ chmod +x publish.sh
 ### Windows (publish.ps1)
 
 ```powershell
+# ヘルプを表示
+.\publish.ps1 -Help
+
 # デフォルトのコミットメッセージで実行
 .\publish.ps1
 
