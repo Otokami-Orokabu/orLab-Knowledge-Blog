@@ -17,6 +17,7 @@ orLab Knowledge Blogは、AI、Unity、Shader、その他の技術情報を整�
 
 - [Hugo](https://gohugo.io/getting-started/installing/)がインストールされていること
   - zshでHugoにパスを通す方法は[こちら](hugo-zsh-setup.md)を参照
+  - 自動セットアップスクリプト: `./setup-hugo-path.sh` を実行するとHugoのパスを自動的に設定します
 
 ### ローカル環境での実行
 
