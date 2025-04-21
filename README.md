@@ -97,6 +97,15 @@ git commit -m "新しい記事を追加"
 git push origin-new new-main:main
 ```
 
+または、自動化スクリプトを使用する場合：
+```bash
+# macOSの場合
+./publish.sh "新しい記事を追加"
+
+# Windowsの場合
+.\publish.ps1 -CommitMessage "新しい記事を追加"
+```
+
 ## GitHub Pagesでの公開
 
 1. GitHubリポジトリの設定ページで、GitHub Pagesのソースを `main` ブランチの `/docs` フォルダに設定します。
@@ -106,6 +115,40 @@ git push origin-new new-main:main
 ## カスタマイズ
 
 サイトのカスタマイズ内容は [CHANGES.md](docs/CHANGES.md) に記録されています。
+
+## 自動化スクリプト
+
+記事作成後のビルド、コミット、プッシュを自動化するスクリプトが用意されています。
+
+### macOS/Linux (publish.sh)
+
+```bash
+# 実行権限を付与（初回のみ）
+chmod +x publish.sh
+
+# デフォルトのコミットメッセージで実行
+./publish.sh
+
+# カスタムコミットメッセージで実行
+./publish.sh "AIカテゴリに新しい記事を追加"
+```
+
+### Windows (publish.ps1)
+
+```powershell
+# デフォルトのコミットメッセージで実行
+.\publish.ps1
+
+# カスタムコミットメッセージで実行
+.\publish.ps1 -CommitMessage "AIカテゴリに新しい記事を追加"
+```
+
+スクリプトは以下の処理を自動的に行います：
+1. 現在のブランチが `new-main` であることを確認（異なる場合は切り替えを提案）
+2. Hugoでサイトをビルド
+3. 変更をGitに追加
+4. 指定されたメッセージでコミット
+5. GitHubにプッシュ（`origin-new new-main:main`）
 
 ## Git ワークフロー
 
