@@ -2,6 +2,8 @@
 
 orLab Knowledge Blogは、AI、Unity、Shader、その他の技術情報を整理して共有するためのHugoベースのブログサイトです。
 
+**公開サイト**: https://otokami-orokabu.github.io/orLab-Knowledge-Blog/
+
 ## 特徴
 
 - **カテゴリ別整理**: AI、Unity、Shader、Notes、Docsなどのカテゴリで情報を整理
@@ -11,6 +13,10 @@ orLab Knowledge Blogは、AI、Unity、Shader、その他の技術情報を整�
 
 ## 使用方法
 
+### 前提条件
+
+- [Hugo](https://gohugo.io/getting-started/installing/)がインストールされていること
+
 ### ローカル環境での実行
 
 1. リポジトリをクローン
@@ -19,7 +25,13 @@ git clone https://github.com/Otokami-Orokabu/orLab-Knowledge-Blog.git
 cd orLab-Knowledge-Blog
 ```
 
-2. Hugoをインストール（まだの場合）
+2. テーマをサブモジュールとして初期化（初回のみ）
+```bash
+git submodule init
+git submodule update
+```
+
+3. Hugoをインストール（まだの場合）
 ```bash
 # macOSの場合
 brew install hugo
@@ -31,12 +43,12 @@ choco install hugo -confirm
 # https://gohugo.io/getting-started/installing/
 ```
 
-3. ローカルサーバーを起動
+4. ローカルサーバーを起動
 ```bash
 hugo server -D
 ```
 
-4. ブラウザで http://localhost:1313/orLab-Knowledge-Blog/ にアクセス
+5. ブラウザで http://localhost:1313/orLab-Knowledge-Blog/ にアクセス
 
 ### 新しい記事の追加
 
@@ -47,6 +59,15 @@ hugo new ai/my-new-post.md
 
 # Unityカテゴリに新しい記事を作成
 hugo new unity/my-new-post.md
+
+# Shaderカテゴリに新しい記事を作成
+hugo new shader/my-new-post.md
+
+# Notesカテゴリに新しい記事を作成
+hugo new notes/my-new-post.md
+
+# Docsカテゴリに新しい記事を作成
+hugo new docs/my-new-post.md
 ```
 
 2. 作成されたMarkdownファイルを編集
@@ -67,12 +88,20 @@ categories: ["カテゴリ名"]
 hugo
 ```
 
+ビルドされたサイトは `docs/` ディレクトリに出力されます。このディレクトリの内容がGitHub Pagesで公開されます。
+
 4. 変更をコミットしてプッシュ
 ```bash
 git add .
 git commit -m "新しい記事を追加"
 git push origin-new new-main:main
 ```
+
+## GitHub Pagesでの公開
+
+1. GitHubリポジトリの設定ページで、GitHub Pagesのソースを `main` ブランチの `/docs` フォルダに設定します。
+
+2. 変更をコミットしてプッシュすると、GitHub Actionsによって自動的にサイトがビルドされ、GitHub Pagesにデプロイされます。
 
 ## カスタマイズ
 
@@ -107,6 +136,37 @@ git commit -m "変更内容の説明"
 git push origin-new new-main:main
 ```
 このコマンドは、ローカルの `new-main` ブランチの内容をリモートの `main` ブランチにプッシュします。
+
+## ディレクトリ構造
+
+```
+orLab-Knowledge-Blog/
+├── .github/
+│   └── workflows/
+│       └── hugo.yml
+├── archetypes/
+│   └── default.md
+├── content/
+│   ├── ai/
+│   │   └── sample.md
+│   ├── unity/
+│   ├── notes/
+│   ├── docs/
+│   └── shader/
+├── docs/          # GitHub Pages 用ビルド出力
+├── layouts/       # カスタムレイアウト
+├── static/
+│   ├── css/
+│   │   └── custom.css
+│   └── images/
+│       └── sample.jpg
+├── themes/
+│   └── ananke/    # サブモジュールとして追加
+├── .gitignore
+├── .gitmodules
+├── config.toml
+└── README.md
+```
 
 ## ライセンス
 
