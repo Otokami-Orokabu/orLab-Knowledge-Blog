@@ -71,12 +71,42 @@ hugo
 ```bash
 git add .
 git commit -m "新しい記事を追加"
-git push
+git push origin-new new-main:main
 ```
 
 ## カスタマイズ
 
 サイトのカスタマイズ内容は [CHANGES.md](docs/CHANGES.md) に記録されています。
+
+## Git ワークフロー
+
+このリポジトリでは以下のブランチ構造を使用しています：
+
+- **new-main**: ローカル開発用のブランチ。すべての変更はこのブランチで行います。
+- **origin/main**: GitHub上のメインブランチ。GitHub Pagesの公開に使用されます。
+
+### 開発の流れ
+
+1. 常に `new-main` ブランチで作業を行います
+```bash
+# 現在のブランチを確認
+git branch
+
+# もし別のブランチにいる場合は new-main に切り替え
+git checkout new-main
+```
+
+2. 変更を加えた後、コミットします
+```bash
+git add .
+git commit -m "変更内容の説明"
+```
+
+3. 変更をGitHubにプッシュします
+```bash
+git push origin-new new-main:main
+```
+このコマンドは、ローカルの `new-main` ブランチの内容をリモートの `main` ブランチにプッシュします。
 
 ## ライセンス
 
