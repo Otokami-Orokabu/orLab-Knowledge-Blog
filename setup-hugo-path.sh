@@ -9,24 +9,49 @@ if command -v hugo &> /dev/null; then
     HUGO_PATH=$(which hugo)
     echo "Hugoが見つかりました: $HUGO_PATH"
 else
-    echo "Hugoが見つかりません。Homebrewでインストールを試みます..."
+    echo "Hugoが見つかりません。"
     
     # Homebrewがインストールされているか確認
     if command -v brew &> /dev/null; then
-        echo "Homebrewを使用してHugoをインストールします..."
-        brew install hugo
+        echo "Homebrewを使用してHugoをインストールしますか？ (y/n)"
+        read -r answer
+        if [ "$answer" = "y" ] || [ "$answer" = "Y" ]; then
+            echo "Homebrewを使用してHugoをインストールします..."
+            brew install hugo
+            
+            if [ $? -ne 0 ]; then
+                echo "エラー: Hugoのインストールに失敗しました。"
+                exit 1
+            fi
+            
+            HUGO_PATH=$(which hugo)
+            echo "Hugoがインストールされました: $HUGO_PATH"
+        else
+            echo "Hugoのインストールをスキップします。"
+            echo "Hugoのパスを手動で入力してください（例: /usr/local/bin/hugo）:"
+            read -r HUGO_PATH
+            
+            if [ ! -f "$HUGO_PATH" ]; then
+                echo "エラー: 指定されたパス '$HUGO_PATH' にHugoが見つかりません。"
+                echo "以下のいずれかの方法でHugoをインストールしてください："
+                echo "1. Homebrew: brew install hugo"
+                echo "2. 公式サイト: https://gohugo.io/getting-started/installing/"
+                exit 1
+            fi
+        fi
+    else
+        echo "Homebrewが見つかりません。"
+        echo "以下のいずれかの方法でHugoをインストールすることをお勧めします："
+        echo "1. Homebrew: https://brew.sh/"
+        echo "2. 公式サイト: https://gohugo.io/getting-started/installing/"
+        echo ""
+        echo "Hugoのパスを手動で入力してください（例: /usr/local/bin/hugo）:"
+        read -r HUGO_PATH
         
-        if [ $? -ne 0 ]; then
-            echo "エラー: Hugoのインストールに失敗しました。"
+        if [ ! -f "$HUGO_PATH" ]; then
+            echo "エラー: 指定されたパス '$HUGO_PATH' にHugoが見つかりません。"
             exit 1
         fi
-        
-        HUGO_PATH=$(which hugo)
-        echo "Hugoがインストールされました: $HUGO_PATH"
-    else
-        echo "エラー: Homebrewが見つかりません。"
-        echo "Homebrewをインストールしてから再度試してください: https://brew.sh/"
-        exit 1
     fi
 fi
 
