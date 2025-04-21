@@ -53,6 +53,14 @@ if [ "$CURRENT_BRANCH" != "main" ]; then
   fi
 fi
 
+# Hugoコマンドが利用可能か確認
+if ! command -v hugo &> /dev/null; then
+  echo "エラー: hugoコマンドが見つかりません。"
+  echo "Hugoがインストールされているか、PATHが正しく設定されているか確認してください。"
+  echo "インストール方法: https://gohugo.io/getting-started/installing/"
+  exit 1
+fi
+
 # サイトをビルド
 echo "Hugoでサイトをビルド中..."
 hugo

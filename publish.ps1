@@ -50,6 +50,15 @@ if ($CurrentBranch -ne "main") {
     }
 }
 
+# Hugoコマンドが利用可能か確認
+$hugoExists = Get-Command hugo -ErrorAction SilentlyContinue
+if (-not $hugoExists) {
+    Write-Host "エラー: hugoコマンドが見つかりません。" -ForegroundColor Red
+    Write-Host "Hugoがインストールされているか、PATHが正しく設定されているか確認してください。" -ForegroundColor Yellow
+    Write-Host "インストール方法: https://gohugo.io/getting-started/installing/" -ForegroundColor Yellow
+    exit 1
+}
+
 # サイトをビルド
 Write-Host "Hugoでサイトをビルド中..." -ForegroundColor Cyan
 hugo
