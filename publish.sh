@@ -4,14 +4,15 @@
 
 # ヘルプメッセージを表示
 show_help() {
-  echo "使用方法: ./publish.sh [コミットメッセージ] [オプション]"
+  SCRIPT_NAME=$(basename "$0")
+  echo "使用方法: ./$SCRIPT_NAME [コミットメッセージ] [オプション]"
   echo ""
   echo "オプション:"
   echo "  --help    このヘルプメッセージを表示"
   echo ""
   echo "例:"
-  echo "  ./publish.sh                           # デフォルトのコミットメッセージ「記事を追加・更新」を使用"
-  echo "  ./publish.sh \"AIカテゴリに記事を追加\"    # カスタムコミットメッセージを指定"
+  echo "  ./$SCRIPT_NAME                           # デフォルトのコミットメッセージ「記事を追加・更新」を使用"
+  echo "  ./$SCRIPT_NAME \"AIカテゴリに記事を追加\"    # カスタムコミットメッセージを指定"
   echo ""
   echo "説明:"
   echo "  このスクリプトは以下の処理を自動的に行います："
