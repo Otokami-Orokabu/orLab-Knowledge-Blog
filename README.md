@@ -134,6 +134,10 @@ chmod +x publish.sh
 
 # カスタムコミットメッセージで実行
 ./publish.sh "AIカテゴリに新しい記事を追加"
+
+# Hugoビルドをスキップして実行（Hugoがインストールされていない場合に便利）
+./publish.sh --skip-build
+./publish.sh "コミットメッセージ" --skip-build
 ```
 
 ### Windows (publish.ps1)
@@ -147,6 +151,10 @@ chmod +x publish.sh
 
 # カスタムコミットメッセージで実行
 .\publish.ps1 -CommitMessage "AIカテゴリに新しい記事を追加"
+
+# Hugoビルドをスキップして実行（Hugoがインストールされていない場合に便利）
+.\publish.ps1 -SkipBuild
+.\publish.ps1 -CommitMessage "コミットメッセージ" -SkipBuild
 ```
 
 スクリプトは以下の処理を自動的に行います：

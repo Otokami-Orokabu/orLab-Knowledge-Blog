@@ -8,11 +8,14 @@ show_help() {
   echo "使用方法: ./$SCRIPT_NAME [コミットメッセージ] [オプション]"
   echo ""
   echo "オプション:"
-  echo "  --help    このヘルプメッセージを表示"
+  echo "  --help         このヘルプメッセージを表示"
+  echo "  --skip-build   Hugoビルドをスキップ（Hugoがインストールされていない場合に便利）"
   echo ""
   echo "例:"
   echo "  ./$SCRIPT_NAME                           # デフォルトのコミットメッセージ「記事を追加・更新」を使用"
   echo "  ./$SCRIPT_NAME \"AIカテゴリに記事を追加\"    # カスタムコミットメッセージを指定"
+  echo "  ./$SCRIPT_NAME --skip-build              # Hugoビルドをスキップ"
+  echo "  ./$SCRIPT_NAME \"コミットメッセージ\" --skip-build  # カスタムメッセージでビルドをスキップ"
   echo ""
   echo "説明:"
   echo "  このスクリプトは以下の処理を自動的に行います："
@@ -24,17 +27,21 @@ show_help() {
   exit 0
 }
 
-# ヘルプオプションの確認
-if [ "$1" = "--help" ]; then
-  show_help
-fi
+# オプションの初期化
+SKIP_BUILD=false
+COMMIT_MSG="記事を追加・更新"
 
-# 引数がない場合はデフォルトのコミットメッセージを使用
-if [ -z "$1" ]; then
-  COMMIT_MSG="記事を追加・更新"
-else
-  COMMIT_MSG="$1"
-fi
+# 引数の処理
+for arg in "$@"; do
+  if [ "$arg" = "--help" ]; then
+    show_help
+  elif [ "$arg" = "--skip-build" ]; then
+    SKIP_BUILD=true
+  elif [[ "$arg" != --* ]]; then
+    # ハイフンで始まらない引数はコミットメッセージとして扱う
+    COMMIT_MSG="$arg"
+  fi
+done
 
 # 現在のブランチを確認
 CURRENT_BRANCH=$(git branch --show-current)
@@ -53,20 +60,26 @@ if [ "$CURRENT_BRANCH" != "main" ]; then
   fi
 fi
 
-# Hugoコマンドが利用可能か確認
-if ! command -v hugo &> /dev/null; then
-  echo "エラー: hugoコマンドが見つかりません。"
-  echo "Hugoがインストールされているか、PATHが正しく設定されているか確認してください。"
-  echo "インストール方法: https://gohugo.io/getting-started/installing/"
-  exit 1
-fi
+# Hugoビルドの処理
+if [ "$SKIP_BUILD" = false ]; then
+  # Hugoコマンドが利用可能か確認
+  if ! command -v hugo &> /dev/null; then
+    echo "エラー: hugoコマンドが見つかりません。"
+    echo "Hugoがインストールされているか、PATHが正しく設定されているか確認してください。"
+    echo "インストール方法: https://gohugo.io/getting-started/installing/"
+    echo "または --skip-build オプションを使用してビルドをスキップしてください。"
+    exit 1
+  fi
 
-# サイトをビルド
-echo "Hugoでサイトをビルド中..."
-hugo
-if [ $? -ne 0 ]; then
-  echo "エラー: Hugoビルドに失敗しました。"
-  exit 1
+  # サイトをビルド
+  echo "Hugoでサイトをビルド中..."
+  hugo
+  if [ $? -ne 0 ]; then
+    echo "エラー: Hugoビルドに失敗しました。"
+    exit 1
+  fi
+else
+  echo "Hugoビルドをスキップします..."
 fi
 
 # 変更をステージングに追加

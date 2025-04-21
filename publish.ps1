@@ -2,20 +2,24 @@
 
 param(
     [string]$CommitMessage = "記事を追加・更新",
-    [switch]$Help
+    [switch]$Help,
+    [switch]$SkipBuild
 )
 
 # ヘルプメッセージを表示
 function Show-Help {
-    Write-Host "使用方法: .\publish.ps1 [-CommitMessage <メッセージ>] [-Help]" -ForegroundColor Cyan
+    Write-Host "使用方法: .\publish.ps1 [-CommitMessage <メッセージ>] [-Help] [-SkipBuild]" -ForegroundColor Cyan
     Write-Host ""
     Write-Host "パラメータ:" -ForegroundColor Cyan
     Write-Host "  -CommitMessage <メッセージ>  コミットメッセージを指定（デフォルト: '記事を追加・更新'）"
     Write-Host "  -Help                      このヘルプメッセージを表示"
+    Write-Host "  -SkipBuild                 Hugoビルドをスキップ（Hugoがインストールされていない場合に便利）"
     Write-Host ""
     Write-Host "例:" -ForegroundColor Cyan
     Write-Host "  .\publish.ps1                                # デフォルトのコミットメッセージを使用"
     Write-Host "  .\publish.ps1 -CommitMessage 'AIカテゴリに記事を追加'  # カスタムコミットメッセージを指定"
+    Write-Host "  .\publish.ps1 -SkipBuild                     # Hugoビルドをスキップ"
+    Write-Host "  .\publish.ps1 -CommitMessage 'コミットメッセージ' -SkipBuild  # カスタムメッセージでビルドをスキップ"
     Write-Host ""
     Write-Host "説明:" -ForegroundColor Cyan
     Write-Host "  このスクリプトは以下の処理を自動的に行います：" -ForegroundColor White
@@ -50,21 +54,27 @@ if ($CurrentBranch -ne "main") {
     }
 }
 
-# Hugoコマンドが利用可能か確認
-$hugoExists = Get-Command hugo -ErrorAction SilentlyContinue
-if (-not $hugoExists) {
-    Write-Host "エラー: hugoコマンドが見つかりません。" -ForegroundColor Red
-    Write-Host "Hugoがインストールされているか、PATHが正しく設定されているか確認してください。" -ForegroundColor Yellow
-    Write-Host "インストール方法: https://gohugo.io/getting-started/installing/" -ForegroundColor Yellow
-    exit 1
-}
+# Hugoビルドの処理
+if (-not $SkipBuild) {
+    # Hugoコマンドが利用可能か確認
+    $hugoExists = Get-Command hugo -ErrorAction SilentlyContinue
+    if (-not $hugoExists) {
+        Write-Host "エラー: hugoコマンドが見つかりません。" -ForegroundColor Red
+        Write-Host "Hugoがインストールされているか、PATHが正しく設定されているか確認してください。" -ForegroundColor Yellow
+        Write-Host "インストール方法: https://gohugo.io/getting-started/installing/" -ForegroundColor Yellow
+        Write-Host "または -SkipBuild オプションを使用してビルドをスキップしてください。" -ForegroundColor Yellow
+        exit 1
+    }
 
-# サイトをビルド
-Write-Host "Hugoでサイトをビルド中..." -ForegroundColor Cyan
-hugo
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "エラー: Hugoビルドに失敗しました。" -ForegroundColor Red
-    exit 1
+    # サイトをビルド
+    Write-Host "Hugoでサイトをビルド中..." -ForegroundColor Cyan
+    hugo
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "エラー: Hugoビルドに失敗しました。" -ForegroundColor Red
+        exit 1
+    }
+} else {
+    Write-Host "Hugoビルドをスキップします..." -ForegroundColor Cyan
 }
 
 # 変更をステージングに追加
