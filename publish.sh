@@ -20,7 +20,7 @@ show_help() {
   echo "  2. Hugoでサイトをビルド"
   echo "  3. 変更をGitに追加"
   echo "  4. 指定されたメッセージでコミット"
-  echo "  5. GitHubにプッシュ（origin-new new-main:main）"
+  echo "  5. GitHubにプッシュ（origin new-main:main）"
   exit 0
 }
 
@@ -81,7 +81,7 @@ fi
 
 # リモートにプッシュ
 echo "GitHubにプッシュ中..."
-git push origin-new new-main:main
+git push origin new-main:main
 if [ $? -ne 0 ]; then
   echo "エラー: プッシュに失敗しました。"
   exit 1

@@ -23,7 +23,7 @@ function Show-Help {
     Write-Host "  2. Hugoでサイトをビルド"
     Write-Host "  3. 変更をGitに追加"
     Write-Host "  4. 指定されたメッセージでコミット"
-    Write-Host "  5. GitHubにプッシュ（origin-new new-main:main）"
+    Write-Host "  5. GitHubにプッシュ（origin new-main:main）"
     exit 0
 }
 
@@ -79,7 +79,7 @@ if ($LASTEXITCODE -ne 0) {
 
 # リモートにプッシュ
 Write-Host "GitHubにプッシュ中..." -ForegroundColor Cyan
-git push origin-new new-main:main
+git push origin new-main:main
 if ($LASTEXITCODE -ne 0) {
     Write-Host "エラー: プッシュに失敗しました。" -ForegroundColor Red
     exit 1

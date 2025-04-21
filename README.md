@@ -94,7 +94,7 @@ hugo
 ```bash
 git add .
 git commit -m "新しい記事を追加"
-git push origin-new new-main:main
+git push origin new-main:main
 ```
 
 または、自動化スクリプトを使用する場合：
@@ -154,7 +154,7 @@ chmod +x publish.sh
 2. Hugoでサイトをビルド
 3. 変更をGitに追加
 4. 指定されたメッセージでコミット
-5. GitHubにプッシュ（`origin-new new-main:main`）
+5. GitHubにプッシュ（`origin new-main:main`）
 
 ## Git ワークフロー
 
@@ -182,7 +182,7 @@ git commit -m "変更内容の説明"
 
 3. 変更をGitHubにプッシュします
 ```bash
-git push origin-new new-main:main
+git push origin new-main:main
 ```
 このコマンドは、ローカルの `new-main` ブランチの内容をリモートの `main` ブランチにプッシュします。
 
