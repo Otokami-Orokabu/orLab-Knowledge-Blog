@@ -2,27 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/ai/</loc>
+    <loc>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/tags/ai/</loc>
     <lastmod>2025-04-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ai/</loc>
+    <loc>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/ai/</loc>
     <lastmod>2025-04-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/</loc>
     <lastmod>2025-04-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/prompt/</loc>
+    <loc>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/tags/prompt/</loc>
     <lastmod>2025-04-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ai/sample/</loc>
+    <loc>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/ai/sample/</loc>
     <lastmod>2025-04-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/structure/</loc>
+    <loc>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/tags/structure/</loc>
     <lastmod>2025-04-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/tags/</loc>
     <lastmod>2025-04-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/categories/</loc>
   </url>
 </urlset>

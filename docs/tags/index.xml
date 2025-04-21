@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on orLab Knowledge</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/tags/</link>
     <description>Recent content in Tags on orLab Knowledge</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sun, 20 Apr 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://otokami-orokabu.github.io/orLab-Knowledge-Blog/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ai</title>
-      <link>http://localhost:1313/tags/ai/</link>
+      <link>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/tags/ai/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ai/</guid>
+      <guid>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/tags/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>Prompt</title>
-      <link>http://localhost:1313/tags/prompt/</link>
+      <link>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/tags/prompt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/prompt/</guid>
+      <guid>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/tags/prompt/</guid>
       <description></description>
     </item>
     <item>
       <title>Structure</title>
-      <link>http://localhost:1313/tags/structure/</link>
+      <link>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/tags/structure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/structure/</guid>
+      <guid>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/tags/structure/</guid>
       <description></description>
     </item>
   </channel>
