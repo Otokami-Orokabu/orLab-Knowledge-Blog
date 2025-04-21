@@ -138,6 +138,10 @@ chmod +x publish.sh
 # Hugoビルドをスキップして実行（Hugoがインストールされていない場合に便利）
 ./publish.sh --skip-build
 ./publish.sh "コミットメッセージ" --skip-build
+
+# Hugoの絶対パスを指定して実行（PATHが通っていない場合に便利）
+./publish.sh --hugo-path=/usr/local/bin/hugo
+./publish.sh "コミットメッセージ" --hugo-path=/opt/homebrew/bin/hugo
 ```
 
 ### Windows (publish.ps1)
@@ -155,6 +159,10 @@ chmod +x publish.sh
 # Hugoビルドをスキップして実行（Hugoがインストールされていない場合に便利）
 .\publish.ps1 -SkipBuild
 .\publish.ps1 -CommitMessage "コミットメッセージ" -SkipBuild
+
+# Hugoの絶対パスを指定して実行（PATHが通っていない場合に便利）
+.\publish.ps1 -HugoPath "C:\Hugo\hugo.exe"
+.\publish.ps1 -CommitMessage "コミットメッセージ" -HugoPath "C:\Hugo\hugo.exe"
 ```
 
 スクリプトは以下の処理を自動的に行います：

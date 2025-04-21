@@ -3,23 +3,26 @@
 param(
     [string]$CommitMessage = "記事を追加・更新",
     [switch]$Help,
-    [switch]$SkipBuild
+    [switch]$SkipBuild,
+    [string]$HugoPath = "hugo"  # デフォルトはPATH上のhugoコマンド
 )
 
 # ヘルプメッセージを表示
 function Show-Help {
-    Write-Host "使用方法: .\publish.ps1 [-CommitMessage <メッセージ>] [-Help] [-SkipBuild]" -ForegroundColor Cyan
+    Write-Host "使用方法: .\publish.ps1 [-CommitMessage <メッセージ>] [-Help] [-SkipBuild] [-HugoPath <パス>]" -ForegroundColor Cyan
     Write-Host ""
     Write-Host "パラメータ:" -ForegroundColor Cyan
     Write-Host "  -CommitMessage <メッセージ>  コミットメッセージを指定（デフォルト: '記事を追加・更新'）"
     Write-Host "  -Help                      このヘルプメッセージを表示"
     Write-Host "  -SkipBuild                 Hugoビルドをスキップ（Hugoがインストールされていない場合に便利）"
+    Write-Host "  -HugoPath <パス>            Hugoコマンドの絶対パスを指定（例: -HugoPath 'C:\Hugo\hugo.exe'）"
     Write-Host ""
     Write-Host "例:" -ForegroundColor Cyan
     Write-Host "  .\publish.ps1                                # デフォルトのコミットメッセージを使用"
     Write-Host "  .\publish.ps1 -CommitMessage 'AIカテゴリに記事を追加'  # カスタムコミットメッセージを指定"
     Write-Host "  .\publish.ps1 -SkipBuild                     # Hugoビルドをスキップ"
     Write-Host "  .\publish.ps1 -CommitMessage 'コミットメッセージ' -SkipBuild  # カスタムメッセージでビルドをスキップ"
+    Write-Host "  .\publish.ps1 -HugoPath 'C:\Hugo\hugo.exe'   # Hugoの絶対パスを指定"
     Write-Host ""
     Write-Host "説明:" -ForegroundColor Cyan
     Write-Host "  このスクリプトは以下の処理を自動的に行います：" -ForegroundColor White
@@ -56,19 +59,25 @@ if ($CurrentBranch -ne "main") {
 
 # Hugoビルドの処理
 if (-not $SkipBuild) {
-    # Hugoコマンドが利用可能か確認
-    $hugoExists = Get-Command hugo -ErrorAction SilentlyContinue
-    if (-not $hugoExists) {
-        Write-Host "エラー: hugoコマンドが見つかりません。" -ForegroundColor Red
-        Write-Host "Hugoがインストールされているか、PATHが正しく設定されているか確認してください。" -ForegroundColor Yellow
-        Write-Host "インストール方法: https://gohugo.io/getting-started/installing/" -ForegroundColor Yellow
-        Write-Host "または -SkipBuild オプションを使用してビルドをスキップしてください。" -ForegroundColor Yellow
+    # 指定されたHugoパスが実行可能か確認
+    try {
+        if (-not (Test-Path $HugoPath)) {
+            # パスが直接指定されていない場合はPATH上で検索
+            $hugoCommand = Get-Command $HugoPath -ErrorAction Stop
+            $HugoPath = $hugoCommand.Path
+        }
+    } catch {
+        Write-Host "エラー: 指定されたHugoコマンド '$HugoPath' が見つからないか実行できません。" -ForegroundColor Red
+        Write-Host "以下のいずれかを試してください：" -ForegroundColor Yellow
+        Write-Host "1. Hugoをインストールする: https://gohugo.io/getting-started/installing/" -ForegroundColor Yellow
+        Write-Host "2. -HugoPath パラメータで正しいパスを指定する（例: -HugoPath 'C:\Hugo\hugo.exe'）" -ForegroundColor Yellow
+        Write-Host "3. -SkipBuild パラメータを使用してビルドをスキップする" -ForegroundColor Yellow
         exit 1
     }
 
     # サイトをビルド
-    Write-Host "Hugoでサイトをビルド中..." -ForegroundColor Cyan
-    hugo
+    Write-Host "Hugoでサイトをビルド中... ($HugoPath)" -ForegroundColor Cyan
+    & $HugoPath
     if ($LASTEXITCODE -ne 0) {
         Write-Host "エラー: Hugoビルドに失敗しました。" -ForegroundColor Red
         exit 1

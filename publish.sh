@@ -10,12 +10,14 @@ show_help() {
   echo "オプション:"
   echo "  --help         このヘルプメッセージを表示"
   echo "  --skip-build   Hugoビルドをスキップ（Hugoがインストールされていない場合に便利）"
+  echo "  --hugo-path=<パス>  Hugoコマンドの絶対パスを指定（例: --hugo-path=/usr/local/bin/hugo）"
   echo ""
   echo "例:"
   echo "  ./$SCRIPT_NAME                           # デフォルトのコミットメッセージ「記事を追加・更新」を使用"
   echo "  ./$SCRIPT_NAME \"AIカテゴリに記事を追加\"    # カスタムコミットメッセージを指定"
   echo "  ./$SCRIPT_NAME --skip-build              # Hugoビルドをスキップ"
   echo "  ./$SCRIPT_NAME \"コミットメッセージ\" --skip-build  # カスタムメッセージでビルドをスキップ"
+  echo "  ./$SCRIPT_NAME --hugo-path=/usr/local/bin/hugo  # Hugoの絶対パスを指定"
   echo ""
   echo "説明:"
   echo "  このスクリプトは以下の処理を自動的に行います："
@@ -30,6 +32,7 @@ show_help() {
 # オプションの初期化
 SKIP_BUILD=false
 COMMIT_MSG="記事を追加・更新"
+HUGO_PATH="hugo"  # デフォルトはPATH上のhugoコマンド
 
 # 引数の処理
 for arg in "$@"; do
@@ -37,6 +40,9 @@ for arg in "$@"; do
     show_help
   elif [ "$arg" = "--skip-build" ]; then
     SKIP_BUILD=true
+  elif [[ "$arg" == --hugo-path=* ]]; then
+    # Hugoパスの取得
+    HUGO_PATH="${arg#*=}"
   elif [[ "$arg" != --* ]]; then
     # ハイフンで始まらない引数はコミットメッセージとして扱う
     COMMIT_MSG="$arg"
@@ -62,18 +68,19 @@ fi
 
 # Hugoビルドの処理
 if [ "$SKIP_BUILD" = false ]; then
-  # Hugoコマンドが利用可能か確認
-  if ! command -v hugo &> /dev/null; then
-    echo "エラー: hugoコマンドが見つかりません。"
-    echo "Hugoがインストールされているか、PATHが正しく設定されているか確認してください。"
-    echo "インストール方法: https://gohugo.io/getting-started/installing/"
-    echo "または --skip-build オプションを使用してビルドをスキップしてください。"
+  # 指定されたHugoパスが実行可能か確認
+  if [ ! -x "$HUGO_PATH" ] && [ ! -x "$(command -v "$HUGO_PATH")" ]; then
+    echo "エラー: 指定されたHugoコマンド '$HUGO_PATH' が見つからないか実行できません。"
+    echo "以下のいずれかを試してください："
+    echo "1. Hugoをインストールする: https://gohugo.io/getting-started/installing/"
+    echo "2. --hugo-path オプションで正しいパスを指定する（例: --hugo-path=/usr/local/bin/hugo）"
+    echo "3. --skip-build オプションを使用してビルドをスキップする"
     exit 1
   fi
 
   # サイトをビルド
-  echo "Hugoでサイトをビルド中..."
-  hugo
+  echo "Hugoでサイトをビルド中... ($HUGO_PATH)"
+  "$HUGO_PATH"
   if [ $? -ne 0 ]; then
     echo "エラー: Hugoビルドに失敗しました。"
     exit 1
