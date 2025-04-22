@@ -1,22 +1,6 @@
 {{ define "main" }}
   <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links {{ $.Param "text_color" | compare.Default "mid-gray" }}">
     {{ .Content }}
-    
-    <!-- Category Navigation -->
-    <div class="category-nav">
-      {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-        <a href="{{ $.Site.BaseURL }}categories/{{ $name | urlize }}">{{ $name | humanize }}</a>
-      {{ end }}
-      
-      <!-- If no categories are defined, use sections instead -->
-      {{ if not .Site.Taxonomies.categories }}
-        {{ range .Site.Sections }}
-          {{ if ne .Section "" }}
-            <a href="{{ $.Site.BaseURL }}{{ .Section | urlize }}">{{ .Section | humanize }}</a>
-          {{ end }}
-        {{ end }}
-      {{ end }}
-    </div>
   </article>
 
   {{/* Define a section to pull recent posts from. For Hugo 0.20 this will default to the section with the most number of pages. */}}

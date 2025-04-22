@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Notes on orLab Knowledge</title>
-    <link>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/notes/</link>
+    <link>http://localhost:1313/orLab-Knowledge-Blog/notes/</link>
     <description>Recent content in Notes on orLab Knowledge</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate>Mon, 21 Apr 2025 23:19:20 +0900</lastBuildDate>
-    <atom:link href="https://otokami-orokabu.github.io/orLab-Knowledge-Blog/notes/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/orLab-Knowledge-Blog/notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Helloworld</title>
-      <link>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/notes/helloworld/</link>
+      <link>http://localhost:1313/orLab-Knowledge-Blog/notes/helloworld/</link>
       <pubDate>Mon, 21 Apr 2025 23:19:20 +0900</pubDate>
-      <guid>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/notes/helloworld/</guid>
+      <guid>http://localhost:1313/orLab-Knowledge-Blog/notes/helloworld/</guid>
       <description>&lt;h2 id=&#34;テスト記事です&#34;&gt;テスト記事です&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/Otokami-Orokabu/Portfolio-created-by-AI&#34;&gt;AI ポートフォリオ&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>

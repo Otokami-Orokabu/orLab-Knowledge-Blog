@@ -14,8 +14,8 @@ publishDir = "docs"
   featured_image = "/images/sample.jpg"
   # Show recent posts on home page
   ananke.show_recent_posts = true
-  recent_posts_number = 5
-  mainSections = ["post", "notes", "ai", "unity", "shader"]
+  recent_posts_number = 4
+  mainSections = ["post", "notes", "ai", "unity", "shader", "docs"]
   
 [menu]
   [[menu.main]]

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Structure on orLab Knowledge</title>
-    <link>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/tags/structure/</link>
+    <link>http://localhost:1313/orLab-Knowledge-Blog/tags/structure/</link>
     <description>Recent content in Structure on orLab Knowledge</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sun, 20 Apr 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://otokami-orokabu.github.io/orLab-Knowledge-Blog/tags/structure/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/orLab-Knowledge-Blog/tags/structure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Prompt設計サンプル</title>
-      <link>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/ai/sample/</link>
+      <link>http://localhost:1313/orLab-Knowledge-Blog/ai/sample/</link>
       <pubDate>Sun, 20 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/ai/sample/</guid>
+      <guid>http://localhost:1313/orLab-Knowledge-Blog/ai/sample/</guid>
       <description>&lt;p&gt;これはAIプロンプト構造のメモです。&lt;br&gt;&#xA;Drive画像を埋め込む場合は以下の形式を使用します：&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://drive.google.com/uc?export=view&amp;amp;id=xxxxxxxxxxxxxxxxxx&#34; alt=&#34;構造図&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
