@@ -122,6 +122,42 @@ git push origin main:main
 
 記事作成後のビルド、コミット、プッシュを自動化するスクリプトが用意されています。
 
+### ローカル開発用スクリプト
+
+以下のスクリプトを使用して、ローカル開発を効率化できます：
+
+- **preview.sh**: ローカルでHugoサーバーを起動し、リアルタイムプレビューを提供します
+  ```bash
+  # 実行権限を付与（初回のみ）
+  chmod +x preview.sh
+  
+  # スクリプトを実行
+  ./preview.sh
+  ```
+  
+- **build.sh**: ローカルでサイトをビルドします
+  ```bash
+  # 実行権限を付与（初回のみ）
+  chmod +x build.sh
+  
+  # スクリプトを実行
+  ./build.sh
+  ```
+
+### GitHub Actions による自動デプロイ
+
+このリポジトリには、GitHub Actionsを使用した自動ビルド・デプロイの設定が含まれています。以下の場合に自動的にサイトがビルドされ、GitHub Pagesにデプロイされます：
+
+1. `main` ブランチに以下のファイルの変更がプッシュされた場合：
+   - `content/**`: コンテンツファイル
+   - `static/**`: 静的ファイル
+   - `layouts/**`: レイアウトファイル
+   - `config.toml`: 設定ファイル
+
+2. GitHubのActionsタブから手動でワークフローを実行した場合
+
+ワークフローの設定は `.github/workflows/hugo.yml` ファイルで確認できます。
+
 ### macOS/Linux (publish.sh)
 
 ```bash

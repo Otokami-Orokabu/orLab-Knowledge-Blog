@@ -1,9 +1,26 @@
+# Hugo自動ビルド・デプロイワークフロー
+# このワークフローは以下の場合に実行されます：
+# 1. mainブランチにコンテンツ関連ファイルがプッシュされた時
+# 2. GitHubのActionsタブから手動で実行された時
+# 
+# ワークフローの動作：
+# - リポジトリをチェックアウト（サブモジュール含む）
+# - Hugoをセットアップ
+# - サイトをビルド
+# - GitHub Pagesにデプロイ（docsディレクトリから）
+
 name: Hugo Build and Deploy
 
 on:
   push:
     branches:
       - main
+    paths:
+      - 'content/**'  # contentディレクトリの変更時のみ実行
+      - 'static/**'   # 静的ファイルの変更時も実行
+      - 'layouts/**'  # レイアウトの変更時も実行
+      - 'config.toml' # 設定ファイルの変更時も実行
+  workflow_dispatch:  # 手動実行のためのトリガー
 
 jobs:
   build-deploy:

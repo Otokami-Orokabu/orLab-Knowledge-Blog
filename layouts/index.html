@@ -5,14 +5,14 @@
     <!-- Category Navigation -->
     <div class="category-nav">
       {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-        <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}">{{ $name | humanize }}</a>
+        <a href="{{ $.Site.BaseURL }}categories/{{ $name | urlize }}">{{ $name | humanize }}</a>
       {{ end }}
       
       <!-- If no categories are defined, use sections instead -->
       {{ if not .Site.Taxonomies.categories }}
         {{ range .Site.Sections }}
           {{ if ne .Section "" }}
-            <a href="{{ .Section | urlize | relLangURL }}">{{ .Section | humanize }}</a>
+            <a href="{{ $.Site.BaseURL }}{{ .Section | urlize }}">{{ .Section | humanize }}</a>
           {{ end }}
         {{ end }}
       {{ end }}
