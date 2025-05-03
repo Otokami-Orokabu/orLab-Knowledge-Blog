@@ -1,4 +1,81 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI on orLab Knowledge</title><link>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/ai/</link><description>Recent content in AI on orLab Knowledge</description><generator>Hugo</generator><language>ja-jp</language><lastBuildDate>Tue, 22 Apr 2025 17:27:15 +0900</lastBuildDate><atom:link href="https://otokami-orokabu.github.io/orLab-Knowledge-Blog/ai/index.xml" rel="self" type="application/rss+xml"/><item><title>AI 開発環境紹介</title><link>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/ai/aidevelop/</link><pubDate>Tue, 22 Apr 2025 17:27:15 +0900</pubDate><guid>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/ai/aidevelop/</guid><description>&lt;h2 id="概要">概要&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI on orLab Knowledge</title><link>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/ai/</link><description>Recent content in AI on orLab Knowledge</description><generator>Hugo</generator><language>ja-jp</language><lastBuildDate>Sat, 03 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://otokami-orokabu.github.io/orLab-Knowledge-Blog/ai/index.xml" rel="self" type="application/rss+xml"/><item><title>ClineにGithub CLIを接続するためのプロンプト</title><link>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/ai/omake20250503/</link><pubDate>Sat, 03 May 2025 00:00:00 +0000</pubDate><guid>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/ai/omake20250503/</guid><description>&lt;h2>&lt;/h2>
+&lt;p>一例となりますが似たようなプロンプトで確認しました.&lt;/p>
+&lt;h3 id="確認環境">確認環境&lt;/h3>
+&lt;p>VSCode + Cline + Claude 3.7&lt;/p>
+&lt;h2 id="プロンプト">プロンプト&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">task&lt;/span>: &lt;span style="color:#ae81ff">GitHub CLIのインストールと操作テスト（macOS M3）&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">environment&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">os&lt;/span>: &lt;span style="color:#ae81ff">macOS&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">architecture&lt;/span>: &lt;span style="color:#ae81ff">arm64 (Apple M3)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">shell&lt;/span>: &lt;span style="color:#ae81ff">auto_detect&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">homebrew_installed&lt;/span>: &lt;span style="color:#ae81ff">unknown&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">github_authenticated&lt;/span>: &lt;span style="color:#66d9ef">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">goal&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">`gh` コマンドをインストールし、正常動作を確認する&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">GitHub CLIからの基本操作（認証・リポジトリ作成・クローン）を通じて環境整備を行う&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">constraints&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">Homebrewが未導入であれば導入を含む&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">CLI完結（GUI操作なし）&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">`gh auth login` によるGitHubアカウント認証を行う&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">GitHub上にテスト用リポジトリを作成してクローン可能かを検証する&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">steps&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">Homebrewの存在確認とインストール（Apple Silicon対応）&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">GitHub CLI (`gh`) のインストールとPATH設定&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">GitHub CLIのバージョン確認&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">`gh auth login` による認証&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">テスト用リポジトリ `gh-cli-test` の作成（privateでも可）&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">ローカルにクローンし、`git remote -v` で接続確認&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">output_format&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">type&lt;/span>: &lt;span style="color:#ae81ff">shell_script&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">format&lt;/span>: |&lt;span style="color:#e6db74">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> # Homebrewチェックと導入（前述）
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> if ! command -v brew &amp;amp;&amp;gt; /dev/null; then
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> echo &amp;#34;Homebrewが見つかりません。インストールします...&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> /bin/bash -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> if [ -n &amp;#34;$ZSH_VERSION&amp;#34; ]; then
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> echo &amp;#39;eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.zprofile
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> fi
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> if [ -n &amp;#34;$BASH_VERSION&amp;#34; ]; then
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> echo &amp;#39;eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> fi
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> fi
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> brew install gh
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> echo &amp;#34;✅ GitHub CLI インストール完了: $(gh --version)&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> # GitHub認証（必要に応じて --web モードで）
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> echo &amp;#34;🔐 GitHubへログインします&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> gh auth login
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> # テスト用のリポジトリを作成
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> echo &amp;#34;📁 テスト用のリポジトリを作成中...&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> gh repo create gh-cli-test --public --confirm
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> # クローンして接続確認
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> echo &amp;#34;📥 クローンします...&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> git clone https://github.com/$(gh api user | jq -r .login)/gh-cli-test.git
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> cd gh-cli-test
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> echo &amp;#34;🔗 接続確認:&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> git remote -v&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">notes&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">`gh auth login` は一度行えば認証が保持されます（トークン保存）&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">`jq` がない場合、`gh api user -q .login` でも代用可&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">リポジトリ作成・クローン後に不要であれば削除して構いません（`gh repo delete`）&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>AI 開発環境紹介</title><link>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/ai/aidevelop/</link><pubDate>Tue, 22 Apr 2025 17:27:15 +0900</pubDate><guid>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/ai/aidevelop/</guid><description>&lt;h2 id="概要">概要&lt;/h2>
 &lt;p>2025/4/22時点での開発とAI運用のまとめ
 ※この記事はちょくちょく編集するかも&lt;/p>
 &lt;h2 id="利用しているサービス">利用しているサービス&lt;/h2>
