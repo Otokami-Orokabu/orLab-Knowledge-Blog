@@ -15,7 +15,7 @@ publishDir = "docs"
   # Show recent posts on home page
   ananke.show_recent_posts = true
   recent_posts_number = 4
-  mainSections = ["post", "notes", "ai", "unity", "shader", "docs"]
+  mainSections = ["post", "notes", "ai", "unity", "shader", "docs", "gardening"]
   
 [menu]
   [[menu.main]]
@@ -42,3 +42,7 @@ publishDir = "docs"
     name = "Docs"
     url = "/docs/"
     weight = 6
+  [[menu.main]]
+    name = "Gardening"
+    url = "/gardening/"
+    weight = 7

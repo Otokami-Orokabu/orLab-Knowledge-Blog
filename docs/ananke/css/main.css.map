@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "/home/runner/work/orLab-Knowledge-Blog/orLab-Knowledge-Blog",
+	"sourceRoot": "/Users/sakabesou/ProjectGit/orDiary",
 	"sources": [
 		"ananke/css/main.css"
 	],
