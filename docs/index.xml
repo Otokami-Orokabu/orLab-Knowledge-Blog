@@ -1,4 +1,190 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>orLab Knowledge</title><link>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/</link><description>Recent content on orLab Knowledge</description><generator>Hugo</generator><language>ja-jp</language><lastBuildDate>Sat, 03 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://otokami-orokabu.github.io/orLab-Knowledge-Blog/index.xml" rel="self" type="application/rss+xml"/><item><title>ClineにGithub CLIを接続するためのプロンプト</title><link>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/ai/omake20250503/</link><pubDate>Sat, 03 May 2025 00:00:00 +0000</pubDate><guid>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/ai/omake20250503/</guid><description>&lt;h2>&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>orLab Knowledge</title><link>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/</link><description>Recent content on orLab Knowledge</description><generator>Hugo</generator><language>ja-jp</language><lastBuildDate>Mon, 05 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://otokami-orokabu.github.io/orLab-Knowledge-Blog/index.xml" rel="self" type="application/rss+xml"/><item><title>バケツ稲 観察記録テンプレート</title><link>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/gardening/20250505_3/</link><pubDate>Mon, 05 May 2025 00:00:00 +0000</pubDate><guid>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/gardening/20250505_3/</guid><description>&lt;h1 id="-バケツ稲-観察記録テンプレート">🌾 バケツ稲 観察記録テンプレート&lt;/h1>
+&lt;p>このテンプレートは、日々または週ごとの観察ログを記録するためのベースです。Markdown形式で管理することで、後から比較・分析しやすくなります。&lt;/p>
+&lt;hr>
+&lt;h2 id="-観察日">📅 観察日&lt;/h2>
+&lt;ul>
+&lt;li>日付：2025-&lt;strong>-&lt;/strong>&lt;/li>
+&lt;li>曜日：（ ） / 天気：晴・曇・雨・その他&lt;/li>
+&lt;li>気温：__℃&lt;/li>
+&lt;li>時刻：午前 / 午後 / 夕方&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-生育状況">🌱 生育状況&lt;/h2>
+&lt;ul>
+&lt;li>葉の本数：&lt;/li>
+&lt;li>背丈（cm）：&lt;/li>
+&lt;li>分けつ数：&lt;/li>
+&lt;li>色合い（緑の濃さ／黄変の様子など）：&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-水と土の管理">💧 水と土の管理&lt;/h2>
+&lt;ul>
+&lt;li>水の状態（澄んでいる／濁っている）：&lt;/li>
+&lt;li>水の量（多め／適量／少なめ）：&lt;/li>
+&lt;li>追肥の有無（あり／なし）：&lt;/li>
+&lt;li>土の状態（乾燥／湿潤／異臭など）：&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-異常対処">🐛 異常・対処&lt;/h2>
+&lt;ul>
+&lt;li>病害虫の有無（あり／なし）：
+&lt;ul>
+&lt;li>種類／症状：&lt;/li>
+&lt;li>対処方法：&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>その他の異常（例：葉が倒れる／白化など）：&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-自由メモ">✍️ 自由メモ&lt;/h2>
+&lt;ul>
+&lt;li>見た目の変化や気づいたこと：&lt;/li>
+&lt;li>天候との関連や予測：&lt;/li>
+&lt;li>次回やりたい作業：&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>必要に応じて、日付単位または週単位でコピーして使用してください。&lt;/p></description></item><item><title>バケツ稲の生育段階チェックリスト（2025）</title><link>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/gardening/20250505_2/</link><pubDate>Mon, 05 May 2025 00:00:00 +0000</pubDate><guid>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/gardening/20250505_2/</guid><description>&lt;h1 id="-バケツ稲の生育段階チェックリスト2025">🌾 バケツ稲の生育段階チェックリスト（2025）&lt;/h1>
+&lt;p>観察と記録に使える、バケツ稲の生育過程に沿ったチェックリストです。生育状況を週ごとに記録することで、変化や問題点を見つけやすくなります。&lt;/p>
+&lt;hr>
+&lt;h2 id="-段階ごとのチェックリスト">📅 段階ごとのチェックリスト&lt;/h2>
+&lt;h3 id="-発芽定植期5月">🌱 発芽〜定植期（5月）&lt;/h3>
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> 種もみを入手し、芽出し処理を開始した&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> 発芽確認（白い芽が1〜2mm）&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> 播種または定植を完了した（1バケツあたり2〜3株）&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="-初期生育分けつ期6月">🌿 初期生育〜分けつ期（6月）&lt;/h3>
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> 根付き確認（水の濁りが落ち着いた）&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> 新葉の展開が始まった&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> 分けつ（枝分かれ）を確認&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> 中干しを実施（1〜2週間水を抜く）&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="-出穂開花期78月">🌾 出穂・開花期（7〜8月）&lt;/h3>
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> 穂が出始めた（出穂）&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> 花が咲いた（開花）※午前中に観察しやすい&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> 病害虫の発生を確認・対処&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="-登熟収穫期9月以降">🌕 登熟〜収穫期（9月以降）&lt;/h3>
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> 穂が垂れてきた（黄変が進む）&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> 籾に硬さが出てきた&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> 稲刈りのタイミングを確認（穂全体の8〜9割が黄金色）&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> 収穫後、陰干しやハサ掛けなどで乾燥を実施&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-備考欄">📓 備考欄&lt;/h2>
+&lt;ul>
+&lt;li>観察日：&lt;/li>
+&lt;li>天気・気温：&lt;/li>
+&lt;li>気づき・異常：&lt;/li>
+&lt;li>次回の作業予定：&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>このチェックリストは、家庭での観察栽培における目安です。気候や品種、栽培環境に応じて柔軟に調整してください。&lt;/p></description></item><item><title>種もみの入手と芽出し処理（バケツ稲2025）</title><link>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/gardening/20250505_1/</link><pubDate>Mon, 05 May 2025 00:00:00 +0000</pubDate><guid>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/gardening/20250505_1/</guid><description>&lt;h1 id="-種もみの入手と芽出し処理バケツ稲2025">🌱 種もみの入手と芽出し処理（バケツ稲2025）&lt;/h1>
+&lt;h2 id="-種もみの入手方法">🛒 種もみの入手方法&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>ホームセンター（DCM・コメリなど）&lt;/strong>&lt;br>
+種子コーナーや園芸資材売り場にて、「バケツ稲セット」や「稲の種もみ」として販売されている場合があります。
+店舗によっては**シーズン限定（4月～5月）**での取り扱いとなるため、事前に問い合わせ推奨。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>オンライン通販（Amazon・楽天など）&lt;/strong>&lt;br>
+「もち米 種もみ」「コシヒカリ 種もみ」などで検索。&lt;br>
+→ 農家向け20kg袋など大容量が多いため、&lt;strong>家庭用には1合（150g）程度の小分けタイプ&lt;/strong>を選ぶと安心。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>JA・道の駅・農業高校などの直販&lt;/strong>&lt;br>
+品種にこだわりたい場合や、地域の気候に合ったものを探す際に有力です。&lt;br>
+→ 「もち米」「黒米」などの入手も可能。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>JAグループの「バケツ稲づくり」プロジェクト&lt;/strong>&lt;br>
+JAグループが主催する「バケツ稲づくり」プロジェクトでは、教育・体験活動の一環として種もみの配布が行われている場合があります。詳細は公式サイト（&lt;a href="https://life.ja-group.jp/education/bucket/">https://life.ja-group.jp/education/bucket/&lt;/a>）をご確認ください。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-芽出し処理催芽の基本手順">💧 芽出し処理（催芽）の基本手順&lt;/h2>
+&lt;h3 id="-塩水選必要に応じて">① 塩水選（必要に応じて）&lt;/h3>
+&lt;ul>
+&lt;li>水1Lに塩170gを溶かして&lt;strong>比重1.13の塩水&lt;/strong>を作る&lt;/li>
+&lt;li>種もみを入れて&lt;strong>沈んだものだけを選抜&lt;/strong>&lt;/li>
+&lt;li>真水ですすいで塩を落とす（重要）&lt;/li>
+&lt;/ul>
+&lt;h3 id="-浸水催芽処理">② 浸水（催芽処理）&lt;/h3>
+&lt;ul>
+&lt;li>選別済みの種もみを&lt;strong>20〜30℃のぬるま湯に浸す&lt;/strong>&lt;/li>
+&lt;li>期間：&lt;strong>3〜5日間程度&lt;/strong>、水を毎日交換（濁りを防ぐ）&lt;/li>
+&lt;li>芽が&lt;strong>1〜2mm程度出たらOK&lt;/strong>（白い突起）&lt;/li>
+&lt;/ul>
+&lt;h3 id="-水切り保温">③ 水切り・保温&lt;/h3>
+&lt;ul>
+&lt;li>芽が出た種もみはザル等で水切り&lt;/li>
+&lt;li>&lt;strong>湿った布 or キッチンペーパーで包んで保温（20℃前後）&lt;/strong>&lt;/li>
+&lt;li>適期まで数日以内に播種（バケツに植え付け）&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-種もみの保存管理">📦 種もみの保存・管理&lt;/h2>
+&lt;ul>
+&lt;li>余った種もみは&lt;strong>冷暗所（冷蔵庫野菜室など）で保管&lt;/strong>&lt;/li>
+&lt;li>湿気・直射日光・高温に注意&lt;/li>
+&lt;li>次年用に使う場合は&lt;strong>発芽率の低下に注意&lt;/strong>（なるべく当年使用推奨）&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-メモ補足">🔖 メモ・補足&lt;/h2>
+&lt;ul>
+&lt;li>芽出しの精度によって発芽率・生育が大きく変わるため、&lt;strong>雑菌を避けて清潔に&lt;/strong>作業することが大切&lt;/li>
+&lt;li>芽の出が揃わないと生育にバラつきが出るため、選別と管理を丁寧に行うこと&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-バケツ稲づくりの年間スケジュール目安">📅 バケツ稲づくりの年間スケジュール（目安）&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>月&lt;/th>
+ &lt;th>作業内容&lt;/th>
+ &lt;th>備考&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>4月中旬〜5月上旬&lt;/td>
+ &lt;td>種もみ入手・芽出し処理&lt;/td>
+ &lt;td>ぬるま湯浸水・発芽確認まで3〜5日間程度&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>5月上旬〜中旬&lt;/td>
+ &lt;td>播種・定植（バケツに植える）&lt;/td>
+ &lt;td>発芽した種もみを移植、2〜3粒ずつ&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>6月&lt;/td>
+ &lt;td>中干し（1〜2週間水を抜く）&lt;/td>
+ &lt;td>根の発達促進と酸欠防止&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>7月〜8月&lt;/td>
+ &lt;td>出穂・開花&lt;/td>
+ &lt;td>追肥・水管理を継続&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>9月&lt;/td>
+ &lt;td>登熟・黄変&lt;/td>
+ &lt;td>穂が垂れて色づく&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>9月下旬〜10月上旬&lt;/td>
+ &lt;td>収穫・乾燥&lt;/td>
+ &lt;td>収穫後は陰干しや稲架け乾燥も可&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>※ 地域や品種によって多少前後します。バケツ稲は「観察栽培」でもあるため、天候や成長の様子に応じて調整してください。&lt;/p></description></item><item><title>ClineにGithub CLIを接続するためのプロンプト</title><link>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/ai/omake20250503/</link><pubDate>Sat, 03 May 2025 00:00:00 +0000</pubDate><guid>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/ai/omake20250503/</guid><description>&lt;h2>&lt;/h2>
 &lt;p>一例となりますが似たようなプロンプトで確認しました.&lt;/p>
 &lt;h3 id="確認環境">確認環境&lt;/h3>
 &lt;p>VSCode + Cline + Claude 3.7&lt;/p>
@@ -255,4 +441,86 @@ Unity クライアントエンジニアとしてフリーランスで活動し�
 &lt;/li>
 &lt;/ul></description></item><item><title>Prompt設計サンプル</title><link>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/ai/sample/</link><pubDate>Sun, 20 Apr 2025 00:00:00 +0000</pubDate><guid>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/ai/sample/</guid><description>&lt;p>これはAIプロンプト構造のメモです。&lt;br>
 Drive画像を埋め込む場合は以下の形式を使用します：&lt;/p>
-&lt;p>&lt;img src="https://drive.google.com/uc?export=view&amp;amp;id=xxxxxxxxxxxxxxxxxx" alt="構造図">&lt;/p></description></item></channel></rss>
+&lt;p>&lt;img src="https://drive.google.com/uc?export=view&amp;amp;id=xxxxxxxxxxxxxxxxxx" alt="構造図">&lt;/p></description></item><item><title/><link>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/gardening/20250505/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://otokami-orokabu.github.io/orLab-Knowledge-Blog/gardening/20250505/</guid><description>&lt;h2 id="tags-稲-プランター-dcm-園芸">title: &amp;ldquo;2025年春・園芸部準備記録&amp;rdquo;
+date: 2025-05-05
+categories: [&amp;ldquo;園芸部&amp;rdquo;]
+tags: [&amp;ldquo;稲&amp;rdquo;, &amp;ldquo;プランター&amp;rdquo;, &amp;ldquo;DCM&amp;rdquo;, &amp;ldquo;園芸&amp;rdquo;]&lt;/h2>
+&lt;h1 id="--目的の整理">## 🎯 目的の整理&lt;/h1>
+&lt;ul>
+&lt;li>バケツ稲の栽培に必要な資材の一括準備と運用計画を記録する&lt;/li>
+&lt;li>余剰土や副資材を活用して、ネギや青じそなどの副作物を並行して育てる&lt;/li>
+&lt;li>作業効率と衛生・防災の観点から、収納・作業環境の整理と改善を行う&lt;/li>
+&lt;li>同様の取り組みをする人への参考資料として共有可能な形で記録する&lt;/li>
+&lt;/ul>
+&lt;h1 id="-園芸部準備記録-2025春---バケツ稲と副作物計画">🌾 園芸部準備記録 2025春 - バケツ稲と副作物計画&lt;/h1>
+&lt;h2 id="-注文履歴dcmオンライン--2025-05-05">✅ 注文履歴（DCMオンライン / 2025-05-05）&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>区分&lt;/th>
+ &lt;th>商品名&lt;/th>
+ &lt;th>数量&lt;/th>
+ &lt;th>単価&lt;/th>
+ &lt;th>小計&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>土壌&lt;/td>
+ &lt;td>黒土 5L&lt;/td>
+ &lt;td>4&lt;/td>
+ &lt;td>¥438&lt;/td>
+ &lt;td>¥1,752&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>赤玉土 5L（中粒）&lt;/td>
+ &lt;td>2&lt;/td>
+ &lt;td>¥327&lt;/td>
+ &lt;td>¥654&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>鹿沼土 5L&lt;/td>
+ &lt;td>1&lt;/td>
+ &lt;td>¥327&lt;/td>
+ &lt;td>¥327&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>バケツ栽培&lt;/td>
+ &lt;td>PPカラーバケツ 10L（赤）&lt;/td>
+ &lt;td>1&lt;/td>
+ &lt;td>¥1,550&lt;/td>
+ &lt;td>¥1,550&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>PPカラーバケツ 10L（青）&lt;/td>
+ &lt;td>1&lt;/td>
+ &lt;td>¥1,550&lt;/td>
+ &lt;td>¥1,550&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>プランター&lt;/td>
+ &lt;td>花と野菜の深型プランター 650&lt;/td>
+ &lt;td>1&lt;/td>
+ &lt;td>¥1,097&lt;/td>
+ &lt;td>¥1,097&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>作業資材&lt;/td>
+ &lt;td>ブルーシート 1.8m × 1.8m（NEOシート）&lt;/td>
+ &lt;td>1&lt;/td>
+ &lt;td>¥980&lt;/td>
+ &lt;td>¥980&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>収納&lt;/td>
+ &lt;td>宅配ボックス 540 TBP-540（ブラウン）&lt;/td>
+ &lt;td>1&lt;/td>
+ &lt;td>¥4,480&lt;/td>
+ &lt;td>¥4,480&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>&lt;strong>合計金額：¥12,390（税込）&lt;/strong> ／ 送料無料適用 ／ 獲得ポイント：56pt&lt;/p></description></item></channel></rss>
